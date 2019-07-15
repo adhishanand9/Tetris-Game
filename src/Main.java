@@ -59,8 +59,8 @@ class square extends shape{
 
     }
 }
-class ts extends shape{
-    ts(){
+class tshape extends shape{
+    tshape(){
         obj[1][0]='#';
         obj[1][1]='#';
         obj[1][2]='#';
@@ -69,8 +69,8 @@ class ts extends shape{
     }
 
 }
-class ls extends shape{
-    ls(){
+class lshape extends shape{
+    lshape(){
         obj[1][1]='#';
         obj[2][1]='#';
         obj[3][1]='#';
@@ -103,6 +103,36 @@ public class Main {
         int columns=70;
         int flag = randomshape();
         int location = randomlocation(columns-10);
+        if(flag==0)
+        {
+            line l = new line();
+            l.createline(location);
+            l.PutLineOnBoard(board, board_rows, board_cols);
+        }
+        else if(flag==1)
+        {
+            square sq = new square();
+            sq.createsquare(location);
+            sq.PutSquareOnBoard(board, board_rows, board_cols);
+        }
+        else if(flag==2)
+        {
+            tshape ts = new tshape();
+            ts.createT(location);
+            ts.PutTshapeOnBoard(board, board_rows, board_cols);
+        }
+        else if(flag==3)
+        {
+            zig ss = new zig();
+            ss.createS(location);
+            ss.PutSshapeOnBoard(board, board_rows, board_cols);
+        }
+        else
+        {
+            lshape ls = new lshape();
+            ls.createL(location);
+            ls.PutLshapeOnBoard(board, board_rows, board_cols);
+        }
     }
     private static void createBoard(){
         for(int i=0;i<30;i++){
