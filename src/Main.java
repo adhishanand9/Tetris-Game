@@ -99,6 +99,10 @@ public class Main {
     {
         createBoard();
         displayBoard();
+        int rows=30;
+        int columns=70;
+        int flag = randomshape();
+        int location = randomlocation(columns-10);
     }
     private static void createBoard(){
         for(int i=0;i<30;i++){
@@ -121,5 +125,15 @@ public class Main {
             }
             System.out.println();
         }
+    }
+    static int randomshape()
+    {
+        Random random = new Random();
+        return random.nextInt(5);
+    }
+    static int randomlocation(int range)
+    {
+        Random random = new Random();
+        return random.nextInt(range);
     }
 }
