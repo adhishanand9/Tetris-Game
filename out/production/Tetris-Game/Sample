@@ -108,3 +108,17 @@ public class Tetris {
         }
     }
 }
+public static void createSquare(){
+ int aj = new int();
+ for(int i=0;i<30;i++){
+    for(int j=0;j<79;j++){
+     square_x={30,0,1,2);
+     zig={24,4,2,2};
+     line={2,0,1,0};
+
+    }
+ }
+}
+class line{
+
+}
