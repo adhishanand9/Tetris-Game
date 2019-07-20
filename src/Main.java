@@ -55,6 +55,22 @@ class Line extends Versions {
         }
         return false;
     }
+    public boolean checkLeft(char board[][]) {
+        if(verNo == 1 && (board[xCord[0]][yCord[0] - 1] == '#' || board[xCord[1]][yCord[1] - 1] == '#' || board[xCord[2]][yCord[2] - 1] == '#' || board[xCord[3]][yCord[3] - 1] == '#')) {
+            return true;
+        } else if(verNo == 2 && board[xCord[0]][yCord[0] - 1] == '#') {
+            return true;
+        }
+        return false;
+    }
+    public boolean checkRight(char board[][]) {
+        if(verNo == 1 && (board[xCord[0]][yCord[0] + 1] == '#' || board[xCord[1]][yCord[1] + 1] == '#' || board[xCord[2]][yCord[2] + 1] == '#' || board[xCord[3]][yCord[3] + 1] == '#')) {
+            return true;
+        } else if(verNo == 2 && board[xCord[3]][yCord[3] - 1] == '#') {
+            return true;
+        }
+        return false;
+    }
 }
 
 class Square extends Versions {
@@ -70,9 +86,17 @@ class Square extends Versions {
         yCord = new int[] {1, 2, 1, 2};
     }
     public boolean checkDown(char board[][]) {
-        if(board[xCord[2] + 1][yCord[2]] == '#' || board[xCord[3] + 1][yCord[3]] == '#') {
+        if(board[xCord[2] + 1][yCord[2]] == '#' || board[xCord[3] + 1][yCord[3]] == '#')
             return true;
-        }
+        return false;
+    }
+    public boolean checkLeft(char board[][]) {
+        if(board[xCord[0]][yCord[0] - 1] == '#' || board[xCord[2]][yCord[2] - 1] == '#')
+            return true;
+        return false;
+    }public boolean checkRight(char board[][]) {
+        if(board[xCord[1]][yCord[1] + 1] == '#' || board[xCord[3]][yCord[3] + 1] == '#')
+            return true;
         return false;
     }
 }
@@ -142,6 +166,30 @@ class T extends Versions {
                 || board[xCord[1] + 1][yCord[1]] == '#' || board[xCord[2] + 1][yCord[2]] == '#')) {
             return true;
         } else if(verNo == 4 && (board[xCord[0] + 1][yCord[0]] == '#' || board[xCord[3] + 1][yCord[3]] == '#')){
+            return true;
+        }
+        return false;
+    }
+    public boolean checkLeft(char board[][]) {
+        if(verNo == 1 && (board[xCord[0]][yCord[0] - 1] == '#' || board[xCord[3]][yCord[3] - 1] == '#')) {
+            return true;
+        } else if(verNo == 2 && (board[xCord[0]][yCord[0] - 1] == '#' || board[xCord[2]][yCord[2] - 1] == '#' || board[xCord[3]][yCord[3] - 1] == '#')) {
+            return true;
+        } else if(verNo == 3 && (board[xCord[2]][yCord[2]- 1] == '#' || board[xCord[3]][yCord[3] - 1] == '#')) {
+            return true;
+        } else if(verNo == 4 && (board[xCord[0]][yCord[0] - 1] == '#' || board[xCord[1]][yCord[1] - 1] == '#' || board[xCord[2]][yCord[2] - 1] == '#')) {
+            return true;
+        }
+        return false;
+    }
+    public boolean checkRight(char board[][]) {
+        if(verNo == 1 && (board[xCord[2]][yCord[2] + 1] == '#' || board[xCord[3]][yCord[3] + 1] == '#')) {
+            return true;
+        } else if(verNo == 2 && (board[xCord[0]][yCord[0] - 1] == '#' || board[xCord[1]][yCord[1] - 1] == '#' || board[xCord[2]][yCord[2] - 1] == '#')) {
+            return true;
+        } else if(verNo == 3 && (board[xCord[0]][yCord[0] - 1] == '#' || board[xCord[3]][yCord[3] - 1] == '#')) {
+            return true;
+        } else if(verNo == 4 && (board[xCord[0]][yCord[0] - 1] == '#' || board[xCord[2]][yCord[2] - 1] == '#' || board[xCord[3]][yCord[3] - 1] == '#')) {
             return true;
         }
         return false;
@@ -217,6 +265,30 @@ class L extends Versions {
         }
         return false;
     }
+    public boolean checkLeft(char board[][]) {
+        if(verNo == 1 && (board[xCord[0]][yCord[0] - 1] == '#' || board[xCord[1]][yCord[1] - 1] == '#' || board[xCord[2]][yCord[2] - 1] == '#')) {
+            return true;
+        } else if(verNo == 2 && (board[xCord[0]][yCord[0] - 1] == '#' || board[xCord[3]][yCord[3] - 1] == '#')) {
+            return true;
+        } else if(verNo == 3 && (board[xCord[0]][yCord[0] - 1] == '#' || board[xCord[1]][yCord[1] - 1] == '#' || board[xCord[3]][yCord[3] - 1] == '#')) {
+            return true;
+        } else if(verNo == 4 && (board[xCord[2]][yCord[2] - 1] == '#' || board[xCord[3]][yCord[3] - 1] == '#')) {
+            return true;
+        }
+        return false;
+    }
+    public boolean checkRight(char board[][]) {
+        if(verNo == 1 && (board[xCord[0]][yCord[0] + 1] == '#' || board[xCord[1]][yCord[1] + 1] == '#' || board[xCord[3]][yCord[3] + 1] == '#')) {
+            return true;
+        } else if(verNo == 2 && (board[xCord[0]][yCord[0] - 1] == '#' || board[xCord[3]][yCord[3] - 1] == '#')) {
+            return true;
+        } else if(verNo == 3 && (board[xCord[0]][yCord[0] + 1] == '#' || board[xCord[1]][yCord[1] + 1] == '#' || board[xCord[2]][yCord[2] + 1] == '#')) {
+            return true;
+        } else if(verNo == 4 && (board[xCord[2]][yCord[2] - 1] == '#' || board[xCord[3]][yCord[3] - 1] == '#')) {
+            return true;
+        }
+        return false;
+    }
 }
 
 class Z extends Versions{
@@ -277,14 +349,40 @@ class Z extends Versions{
         }
         return false;
     }
+    public boolean checkLeft(char board[][]) {
+        if(verNo == 1 && (board[xCord[0]][yCord[0] - 1] == '#' || board[xCord[1]][yCord[1] - 1] == '#' || board[xCord[3]][yCord[3] - 1] == '#')) {
+            return true;
+        } else if(verNo == 2 && (board[xCord[1]][yCord[1] - 1] == '#' || board[xCord[3]][yCord[3] - 1] == '#')) {
+            return true;
+        } else if(verNo == 3 && (board[xCord[0]][yCord[0] - 1] == '#' || board[xCord[2]][yCord[2] - 1] == '#' || board[xCord[3]][yCord[3] - 1] == '#')) {
+            return true;
+        } else if(verNo == 4 && (board[xCord[0]][yCord[0] - 1] == '#' || board[xCord[2]][yCord[2] - 1] == '#')) {
+            return true;
+        }
+        return false;
+    }
+    public boolean checkRight(char board[][]) {
+        if(verNo == 1 && (board[xCord[0]][yCord[0] + 1] == '#' || board[xCord[2]][yCord[2] + 1] == '#' || board[xCord[3]][yCord[3] + 1] == '#')) {
+            return true;
+        } else if(verNo == 2 && (board[xCord[0]][yCord[0] - 1] == '#' || board[xCord[2]][yCord[2] - 1] == '#')) {
+            return true;
+        } else if(verNo == 3 && (board[xCord[0]][yCord[0] + 1] == '#' || board[xCord[1]][yCord[1] + 1] == '#' || board[xCord[3]][yCord[3] + 1] == '#')) {
+            return true;
+        } else if(verNo == 4 && (board[xCord[1]][yCord[1] - 1] == '#' || board[xCord[3]][yCord[3] - 1] == '#')) {
+            return true;
+        }
+        return false;
+    }
 }
 
 public class Main {
-    public static char board[][] = new char[30][30];
-    static int currentVer = 1, currentShapeNo = 1;
+    public static char board[][] = new char[25][25];
+    public static int hashCount[] = new int[24];
+    static int currentVer = 1, currentShapeNo = 2;
+    public static Stack<String> undoStack = new Stack<String>();
+    public static Stack<String> redoStack = new Stack<String>();
     public static void main(String args[]) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Lets Start!!!");
         Line line = new Line();
         Square square = new Square();
         T t = new T();
@@ -300,7 +398,9 @@ public class Main {
             dir = scanner.next().charAt(0);
             if (dir == 'r') {
                 currentVer = currentVer > 4 ? 1 : ++currentVer;
+                clearBoard(currentShape);
                 currentShape.changeVer(currentVer);
+                undoStack.push("r");
                 clearScreen();
             } else if(dir == 'a') {
                 moveLeft(currentShape);
@@ -311,8 +411,27 @@ public class Main {
             } else if(dir == 's') {
                 moveDown(currentShape);
                 clearScreen();
+            } else if(dir == 'u') {
+                if(undoStack.isEmpty()) continue ;
+                undoStep(undoStack.peek(), currentShape);
+                redoStack.push(undoStack.pop());
+            } else if(dir == 'q') {
+                if(redoStack.isEmpty()) continue ;
+                if(redoStack.peek().equals("a"))
+                    redoStep("d", currentShape);
+                else if(redoStack.peek().equals("d"))
+                    redoStep("a", currentShape);
+                undoStack.push(redoStack.pop());
+            } else if(dir == 'p') {
+                printHash();
+            } else if(dir == 'x') {
+                break;
             }
-
+        }
+    }
+    public static void clearBoard(Versions V) {
+        for (int i = 0; i < V.xCord.length; i++) {
+            board[V.xCord[i]][V.yCord[i]] = ' ';
         }
     }
     public static void initBoard() {
@@ -323,6 +442,11 @@ public class Main {
                 else
                     board[i][j] = ' ';
             }
+        }
+    }
+    public static void printHash() {
+        for(int i = 0;i<hashCount.length;i++) {
+            System.out.println(hashCount[i]);
         }
     }
     public static void drawOnBoard(Versions V) {
@@ -338,34 +462,55 @@ public class Main {
             System.out.println();
         }
     }
+    public static void checkRemoval(Versions V) {
+        for(int i=0;i<25;i++) {
+            hashCount[board.length-1-V.xCord[i]]++;
+            System.out.println("---"+(board.length-2-V.xCord[i]));
+        }
+        for(int i=1;i<29;i++) {
+            System.out.print(hashCount[i]+" ");
+        }
+        System.out.println();
+
+        for(int i=board.length-1;i>0;i--) {
+            if(hashCount[i]>5) {
+                System.out.println("Line no at"+i+"Remove Line");
+
+                for(int j=board.length-1-i;j>0;j--) {
+                    board[j]=board[j-1];
+                }
+                board[0]=new char[25];
+            }
+        }
+    }
     public static void moveDown(Versions V) {
         if(V.xCord[0] == (board.length - 2) || V.xCord[1] == (board.length - 2) ||
                 V.xCord[2] == (board.length - 2) || V.xCord[3] == (board.length - 2) || V.checkDown(board)) {
+            for(int i:V.xCord ) {
+                hashCount[i]++;
+                if(hashCount[i] == board.length - 2) {
+                    hashCount[i] = 0;
+                    int j;
+                    for(j = i;j>1 && hashCount[j - 1] != 0;j--) {
+                        board[j] = board[j-1];
+                    }
+                    board[j] = new char[25];
+                    board[j][0] = '*';
+                    board[j][board.length - 1] = '*';
+                    displayBoard();
+                }
+            }
+            //checkRemoval(V);
             V.generateVer();
             currentShapeNo = (int)(Math.random() * 5) + 1;
+            // currentShapeNo = 2;
             return;
         }
         for(int i = 0;i<V.xCord.length;i++) {
             board[V.xCord[i]][V.yCord[i]] = ' ';
             V.xCord[i]++;
         }
-    }
-    public static void moveLeft(Versions V) {
-        if(V.yCord[0] == 1 || V.yCord[1] == 1 || V.yCord[2] == 1 || V.yCord[3] == 1)
-            return;
-        for(int i = 0;i<V.xCord.length;i++) {
-            board[V.xCord[i]][V.yCord[i]] = ' ';
-            V.yCord[i]--;
-        }
-
-    }
-    public static void moveRight(Versions V) {
-        if(V.yCord[0] == (board.length - 2) || V.yCord[1] == (board.length - 2) || V.yCord[2] == (board.length - 2) || V.yCord[3] == (board.length - 2))
-            return;
-        for(int i = 0;i<V.xCord.length;i++) {
-            board[V.xCord[i]][V.yCord[i]] = ' ';
-            V.yCord[i]++;
-        }
+        undoStack.push("s");
     }
     static int randomshape()
     {
@@ -377,44 +522,53 @@ public class Main {
         Random random = new Random();
         return random.nextInt(range);
     }
-    static int checkBlock(Versions V)
-    {
-        for(int i=0;i<V.xCord[0];i++)
-        {
-            if(board[i][V.yCord[i]]=='#'||board[i][V.yCord[i]]=='*')
-            {
-                //CallNewBlock();
-
-            }
-        }
-        return 0;
-    }
     public static void clearScreen() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
     }
-    public static void checkRemoval(Versions V)
-    {
-        int flag=0;
-        for(int i=0;i<4;i++) {
-            for (int j = 0; j < 28; j++){
-                if(board[V.xCord[0]][V.yCord[0]]=='#')
-                {
-                    flag=1;
-                    continue;
-
-                }
-                else
-                    break;
+    public static void moveLeft(Versions V) {
+        if(V.yCord[0] == 1 || V.yCord[1] == 1 || V.yCord[2] == 1 || V.yCord[3] == 1 || V.checkLeft(board))
+            return;
+        for(int i = 0;i<V.xCord.length;i++) {
+            board[V.xCord[i]][V.yCord[i]] = ' ';
+            V.yCord[i]--;
+        }
+        undoStack.push("a");
+    }
+    public static void moveRight(Versions V) {
+        if(V.yCord[0] == (board.length - 2) || V.yCord[1] == (board.length - 2) || V.yCord[2] == (board.length - 2) || V.yCord[3] == (board.length - 2) || V.checkRight(board))
+            return;
+        for(int i = 0;i<V.xCord.length;i++) {
+            board[V.xCord[i]][V.yCord[i]] = ' ';
+            V.yCord[i]++;
+        }
+        undoStack.push("d");
+    }
+    public static void undoStep(String dir, Versions V) {
+        if(dir.equals("s")) {
+            for(int i = 0;i<V.xCord.length;i++) {
+                board[V.xCord[i]][V.yCord[i]] = ' ';
+                V.xCord[i]--;
             }
-            if(flag==1){
-                for(i=0;i<28;i++)
-                {
-                    board[V.xCord[0]][V.yCord[i]]=' ';
-                }
-            }
-            board[0]=new char[30];
+        } else if( dir.equals("a")) {
+            moveRight(V);
+        } else if( dir.equals("d")) {
+            moveLeft(V);
+        } else if(dir.equals("r")) {
+            currentVer--;
+            V.changeVer(currentVer);
         }
     }
-
+    public static void redoStep(String dir, Versions V) {
+        if(dir.equals("s")) {
+            moveDown(V);
+        } else if( dir.equals("a")) {
+            moveLeft(V);
+        } else if( dir.equals("d")) {
+            moveRight(V);
+        } else if(dir.equals("r")) {
+            currentVer++;
+            V.changeVer(currentVer);
+        }
+    }
 }
